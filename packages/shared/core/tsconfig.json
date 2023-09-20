@@ -1,0 +1,8 @@
+{
+  "extends": "@config/tsconfig/script.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}
