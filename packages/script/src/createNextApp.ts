@@ -178,6 +178,21 @@ const getCreateNextAppCommand = (options: CreateNextAppOptionAnswers) => {
     load.succeed();
   };
 
+  const setupTailwindConfigToNextApp = (nextAppPath: string) => {
+    const nextAppTSConfigPath = path.join(nextAppPath, "tailwind.config.ts");
+    const templateTSConfigPath = path.join(
+      CREATE_NEXT_APP_TEMPLATE_DIR,
+      "tailwind.config.ts"
+    );
+
+    const load = loading("Setup tailwind.config.ts of Next.js app...");
+
+    load.start();
+    rmSync(nextAppTSConfigPath);
+    cpSync(templateTSConfigPath, nextAppTSConfigPath);
+    load.succeed();
+  };
+
   const setupNextConfigToNextApp = (nextAppPath: string) => {
     const nextAppNextConfigPath = path.join(nextAppPath, "next.config.js");
     const templateNextConfigPath = path.join(
@@ -232,6 +247,7 @@ const getCreateNextAppCommand = (options: CreateNextAppOptionAnswers) => {
     setupESLintToNextApp(nextAppESLintJSONPath, nextAppESLintJSON);
     setupPostCSSToNextApp(nextAppPath);
     setupTSConfigToNextApp(nextAppPath);
+    setupTailwindConfigToNextApp(nextAppPath);
     setupNextConfigToNextApp(nextAppPath);
   } catch (e) {
     handleCliError(e);

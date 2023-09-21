@@ -93,6 +93,7 @@ export const NEXT_APP_MONOREPO_DEPENDENCY: string[] = [
 ];
 export const NEXT_APP_MONOREPO_DEV_DEPENDENCY: string[] = [
   ...COMMON_MONOREPO_DEV_DEPENDENCY,
+  "@config/tailwind",
 ];
 
 export const NEXT_APP_DEPENDENCY: string[] = [
@@ -110,4 +111,7 @@ export const NEXT_APP_DEV_DEPENDENCY: string[] = [
   "eslint-plugin-prettier",
   "eslint-plugin-unused-imports",
   "postcss-import",
+  "@tailwindcss/line-clamp",
+  "@tailwindcss/typography",
+  "@tailwindcss/forms",
 ];
