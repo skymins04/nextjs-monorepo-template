@@ -111,7 +111,6 @@ export const NEXT_APP_DEV_DEPENDENCY: string[] = [
   "eslint-plugin-prettier",
   "eslint-plugin-unused-imports",
   "postcss-import",
-  "@tailwindcss/line-clamp",
   "@tailwindcss/typography",
   "@tailwindcss/forms",
 ];

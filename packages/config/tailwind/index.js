@@ -1,7 +1,7 @@
 // const themeSwapperPlugin = require("tailwindcss-theme-swapper");
 const scollbarPlugin = require("tailwind-scrollbar");
 const { defaultColors, colorConfig } = require("./styles/colors");
-// const { typography, textStyle, textEllipsis } = require("./styles/typography");
+const { typography, textStyle, textEllipsis } = require("./styles/typography");
 const screens = require("./styles/screens");
 const layouts = require("./styles/layouts");
 const border = require("./styles/border");
@@ -28,7 +28,7 @@ module.exports = {
     ...background,
     ...border,
     ...effects,
-    // ...typography,
+    ...typography,
     container: {},
     content: {
       none: "none",
@@ -75,8 +75,8 @@ module.exports = {
   plugins: [
     ({ addUtilities, addVariant }) => {
       addUtilities({
-        // ...textStyle,
-        // ...textEllipsis,
+        ...textStyle,
+        ...textEllipsis,
         "clip-rect-0": {
           clip: "rect(0px, 0px, 0px, 0px)",
         },
